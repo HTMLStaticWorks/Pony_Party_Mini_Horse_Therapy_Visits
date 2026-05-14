@@ -1,0 +1,162 @@
+/* =============================================
+   PONY PARTY - RTL (Right-to-Left) Styles
+   Applied via [dir="rtl"] on <html>
+   ============================================= */
+
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .header-inner {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .header-actions {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .nav-list {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .brand {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .section-header {
+  text-align: center;
+}
+
+[dir="rtl"] .hero-actions {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .hero-stats {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .hero-inner {
+  direction: rtl;
+}
+
+[dir="rtl"] .card-body {
+  text-align: center;
+}
+
+[dir="rtl"] .footer-link {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer-link:hover {
+  padding-left: 0;
+  padding-right: var(--space-2);
+}
+
+[dir="rtl"] .footer-grid {
+  direction: rtl;
+}
+
+[dir="rtl"] .footer-bottom {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .mobile-menu {
+  transform: translateX(-100%);
+}
+
+[dir="rtl"] .mobile-menu.open {
+  transform: translateX(0);
+}
+
+[dir="rtl"] .mobile-nav-link {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .back-to-top {
+  right: auto;
+  left: var(--space-6);
+}
+
+[dir="rtl"] .pony-badge {
+  left: auto;
+  right: var(--space-3);
+}
+
+[dir="rtl"] .pricing-badge {
+  right: auto;
+  left: var(--space-4);
+}
+
+[dir="rtl"] .testimonial-author {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .therapy-step {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .req-item {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .breadcrumb {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .price-features li {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .form-row-between {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .faq-question {
+  text-align: right;
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .contact-info-card {
+  text-align: center;
+}
+
+[dir="rtl"] .input-icon-btn {
+  right: auto;
+  left: var(--space-3);
+}
+
+[dir="rtl"] .input-icon-wrap .form-control {
+  padding-right: var(--space-4);
+  padding-left: var(--space-10);
+}
+
+[dir="rtl"] .auth-topbar {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .social-btn {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .btn {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .form-check {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .blog-meta {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .hero-float-1 {
+  left: auto;
+  right: -30px;
+}
+
+[dir="rtl"] .hero-float-2 {
+  right: auto;
+  left: -20px;
+}

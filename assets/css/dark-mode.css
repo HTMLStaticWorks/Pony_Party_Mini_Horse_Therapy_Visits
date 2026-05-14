@@ -1,0 +1,105 @@
+/* =============================================
+   PONY PARTY - Dark Mode Styles
+   Applied via [data-theme="dark"] on <html>
+   ============================================= */
+
+[data-theme="dark"] .site-header {
+  background: rgba(18, 11, 14, 0.95);
+  border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .hero-img-main {
+  box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+}
+
+[data-theme="dark"] .hero-img-float {
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+[data-theme="dark"] .card,
+[data-theme="dark"] .pony-card,
+[data-theme="dark"] .pricing-card,
+[data-theme="dark"] .testimonial-card,
+[data-theme="dark"] .blog-card,
+[data-theme="dark"] .team-card,
+[data-theme="dark"] .addon-card,
+[data-theme="dark"] .faq-item {
+  background: var(--bg-card);
+}
+
+[data-theme="dark"] .hero-blob {
+  opacity: 0.15;
+}
+
+[data-theme="dark"] .page-hero {
+  background: linear-gradient(180deg, var(--bg-secondary), var(--bg-primary));
+}
+
+[data-theme="dark"] .cta-section {
+  background: linear-gradient(135deg, #8B1A3E, #3A1F6E);
+}
+
+[data-theme="dark"] .social-btn {
+  background: var(--bg-secondary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .social-btn:hover {
+  background: var(--bg-card);
+  border-color: var(--primary-light);
+}
+
+[data-theme="dark"] .map-placeholder {
+  background: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .mobile-menu {
+  background: var(--bg-primary);
+}
+
+[data-theme="dark"] .auth-card {
+  background: var(--bg-card);
+  box-shadow: 0 20px 80px rgba(0,0,0,0.5);
+}
+
+[data-theme="dark"] .booking-form {
+  background: var(--bg-card);
+}
+
+[data-theme="dark"] .form-control {
+  background: var(--bg-secondary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .form-control::placeholder {
+  color: var(--text-muted);
+}
+
+[data-theme="dark"] .stats-bar {
+  background: linear-gradient(135deg, #8B1A3E, #3A1F6E);
+}
+
+[data-theme="dark"] .therapy-info {
+  background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));
+}
+
+[data-theme="dark"] .countdown-item {
+  background: var(--bg-card);
+}
+
+[data-theme="dark"] img.hero-img-main,
+[data-theme="dark"] img.pony-img {
+  filter: brightness(0.9);
+}
+
+/* Scrollbar dark */
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: var(--primary-dark);
+}
