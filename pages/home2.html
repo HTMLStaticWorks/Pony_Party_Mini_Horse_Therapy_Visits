@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/dark-mode.css">
   <link rel="stylesheet" href="../assets/css/rtl.css">
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
   <style>
     .hero2 {
       min-height: calc(100vh - var(--header-height));
@@ -140,6 +141,64 @@
       color: var(--primary);
       margin-top: var(--space-2);
     }
+
+    /* Image Height Fix for Desktop/1024px */
+    @media (min-width: 1024px) {
+      .hero-img-main {
+        min-height: 520px !important;
+        object-fit: cover;
+      }
+      .therapy-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-8);
+        align-items: center;
+      }
+      .therapy-info-image {
+        min-height: 520px !important;
+        object-fit: cover;
+      }
+    }
+
+    @media (max-width: 1023px) {
+      .therapy-info {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-8);
+      }
+    }
+
+    .therapy-info-image {
+       width: 100%;
+       border-radius: var(--radius-lg);
+       box-shadow: var(--shadow-lg);
+    }
+
+    .therapy-steps {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      text-align: left;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .therapy-step {
+      display: flex;
+      gap: var(--space-4);
+      align-items: center;
+    }
+    .step-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
   </style>
 </head>
 <body>
@@ -240,8 +299,6 @@
               width="560" height="420"
               loading="eager"
             >
-            
-            
           </div>
         </div>
       </div>
@@ -337,7 +394,7 @@
             <div class="card-body" style="text-align:center;align-items:center;">
               <div class="card-icon" style="margin:0 auto var(--space-4);width:50px;height:50px;"><i class="fas fa-brain"></i></div>
               <h4>Calm & Focus</h4>
-              <p>Interaction with our gentle herd encourages mindfulness and presence, helping individuals stay grounded and focused in the moment.</p>
+              <p>Interaction with our gentle herd encourages mindfulness and presence, helping individuals stay grounded and in the moment.</p>
               <ul class="price-features" style="border:none;margin-bottom:0;width:100%;display:flex;flex-direction:column;align-items:center;">
                 <li style="border:none;padding:var(--space-1) 0;justify-content:center;width:auto;"><span class="check"><i class="fas fa-check"></i></span>Mindfulness Training</li>
                 <li style="border:none;padding:var(--space-1) 0;justify-content:center;width:auto;"><span class="check"><i class="fas fa-check"></i></span>Stress Reduction</li>
@@ -353,7 +410,7 @@
               <h3 style="margin:var(--space-4) 0;">Simple Steps to Healing</h3>
               <p style="margin-bottom:var(--space-8);">We've streamlined our therapy visit process to ensure maximum comfort and safety for everyone involved.</p>
               
-              <div class="therapy-steps" style="margin-top:var(--space-6);">
+              <div class="therapy-steps">
                 <div class="therapy-step">
                   <div class="step-num">1</div>
                   <div>
@@ -377,8 +434,8 @@
                 </div>
               </div>
             </div>
-            <div style="display:flex;align-items:stretch;">
-              <img src="https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/06/GettyImages-1067604900_header-1024x575.jpg?w=1155&h=1528" alt="Therapy session" class="therapy-info-image" style="width:100%;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);">
+            <div>
+              <img src="https://emilyarrandequinemassage.com/wp-content/uploads/2025/04/pexels-photo-7882338.jpg?w=1024" alt="Therapy session" class="therapy-info-image">
             </div>
           </div>
         </div>

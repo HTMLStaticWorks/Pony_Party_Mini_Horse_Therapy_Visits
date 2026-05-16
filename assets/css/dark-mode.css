@@ -31,9 +31,11 @@
   opacity: 0.15;
 }
 
-[data-theme="dark"] .page-hero {
+/* .page-hero is always light mode as per user request */
+/* [data-theme="dark"] .page-hero {
   background: linear-gradient(180deg, var(--bg-secondary), var(--bg-primary));
-}
+} */
+
 
 [data-theme="dark"] .cta-section {
   background: linear-gradient(135deg, #8B1A3E, #3A1F6E);

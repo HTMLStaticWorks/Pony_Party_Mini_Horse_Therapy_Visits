@@ -555,8 +555,14 @@ p {
   background: var(--primary-glow);
   border-color: var(--primary);
   color: var(--primary);
-  transform: rotate(20deg);
 }
+
+@media (hover: hover) {
+  .theme-toggle:hover {
+    transform: rotate(20deg);
+  }
+}
+
 
 /* Login Button (Header) */
 .btn-login {
@@ -688,7 +694,9 @@ p {
   justify-content: center;
   align-items: center;
   margin-bottom: 0;
+  transform: none !important; /* Prevent rotation sticking on touch */
 }
+
 
 /* =============================================
    HERO SECTIONS
