@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Pony Party Services - Party packages, therapy visits, grooming add-ons, and online booking with paddock requirements.">
+  <meta name="description"
+    content="Pony Party Services - Party packages, therapy visits, grooming add-ons, and online booking with paddock requirements.">
   <title>Services | Pony Party</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/dark-mode.css">
@@ -14,23 +18,27 @@
   <style>
     .service-tabs {
       display: flex;
-      gap: var(--space-2);
       flex-wrap: wrap;
+      gap: var(--space-4);
       justify-content: center;
-      margin-bottom: var(--space-10);
+      margin-bottom: var(--space-12);
     }
+
     .service-tab {
-      padding: var(--space-3) var(--space-5);
+      flex: 1;
+      min-width: 200px;
+      padding: var(--space-4) var(--space-6);
       border-radius: var(--radius-full);
-      border: 2px solid var(--border-color);
+      border: 1px solid var(--border-color);
       background: var(--bg-card);
-      color: var(--text-secondary);
-      font-size: 0.9rem;
+      color: var(--text-primary);
       font-weight: 600;
       cursor: pointer;
       transition: all var(--transition-base);
       font-family: var(--font-body);
+      text-align: center;
     }
+
     .service-tab:hover,
     .service-tab.active {
       background: var(--primary);
@@ -39,42 +47,87 @@
       transform: translateY(-2px);
       box-shadow: 0 6px 20px var(--primary-glow);
     }
-    .service-panel { display: none; }
-    .service-panel.active { display: block; }
+
+    .service-panel {
+      display: none;
+    }
+
+    .service-panel.active {
+      display: block;
+    }
 
     .service-feature-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: var(--space-12);
-      align-items: center;
+      align-items: stretch;
       margin-bottom: var(--space-16);
     }
-    .service-feature-row.reverse { direction: rtl; }
-    .service-feature-row.reverse > * { direction: ltr; }
-    @media(max-width:767px){
-      .service-feature-row { grid-template-columns: 1fr !important; }
-      .service-feature-row.reverse { direction: ltr; }
+
+    .service-feature-row .service-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: var(--space-8);
     }
+
+    .service-feature-row.reverse {
+      direction: rtl;
+    }
+
+    .service-feature-row.reverse>* {
+      direction: ltr;
+    }
+
+    @media(max-width:768px) {
+      .service-feature-row {
+        grid-template-columns: 1fr !important;
+        gap: var(--space-6);
+        align-items: center;
+      }
+
+      .service-feature-row.reverse {
+        direction: ltr;
+      }
+
+      .service-feature-row .service-text {
+        padding: var(--space-4) 0;
+      }
+
+      .service-feature-img {
+        aspect-ratio: 16/9;
+        height: auto;
+      }
+    }
+
     .service-feature-img {
       width: 100%;
+      height: 100%;
       border-radius: var(--radius-xl);
-      aspect-ratio: 4/3;
       object-fit: cover;
       box-shadow: var(--shadow-lg);
     }
+
     .service-check-list {
-      margin: var(--space-5) 0;
+      margin: var(--space-6) auto;
       display: flex;
       flex-direction: column;
-      gap: var(--space-3);
+      gap: var(--space-4);
+      width: fit-content;
+      max-width: 100%;
     }
+
     .service-check-list li {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       gap: var(--space-3);
       font-size: 0.95rem;
       color: var(--text-secondary);
+      text-align: left;
     }
+
     .service-check-list .check-icon {
       width: 22px;
       height: 22px;
@@ -86,15 +139,17 @@
       justify-content: center;
       font-size: 0.7rem;
       flex-shrink: 0;
-      margin-top: 2px;
     }
   </style>
 </head>
+
 <body>
   <header class="site-header">
     <div class="container">
       <div class="header-inner">
-        <a href="../index.html" class="brand"><div class="brand-logo">🐴</div><span class="brand-name">Pony Party</span></a>
+        <a href="../index.html" class="brand">
+          <div class="brand-logo">🐴</div><span class="brand-name">Pony Party</span>
+        </a>
         <nav class="header-nav">
           <ul class="nav-list">
             <li><a href="../index.html" class="nav-link">Home</a></li>
@@ -106,7 +161,7 @@
           </ul>
         </nav>
         <div class="header-actions">
-          <button class="rtl-toggle">RTL</button>
+          <button class="rtl-toggle" aria-label="Toggle RTL">RTL</button>
           <button class="theme-toggle">🌙</button>
           <a href="login.html" class="btn-login hide-mobile">Login</a>
           <button class="hamburger"><span></span><span></span><span></span></button>
@@ -125,6 +180,10 @@
       <li><a href="contact.html" class="mobile-nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
     </ul>
     <div class="mobile-menu-footer">
+      <div class="toggles-row">
+        <button class="rtl-toggle">RTL</button>
+        <button class="theme-toggle">🌙</button>
+      </div>
       <a href="login.html" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;">Login</a>
     </div>
   </div>
@@ -135,7 +194,8 @@
       <div class="container">
         <div class="breadcrumb"><a href="../index.html">Home</a> <i class="fas fa-chevron-right"></i> Services</div>
         <h1 class="reveal">Our Services</h1>
-        <p class="reveal" style="max-width:560px;margin:var(--space-4) auto 0;font-size:1.05rem;">Everything from birthday bashes to healing therapy — handcrafted experiences with our certified pony herd.</p>
+        <p class="reveal" style="max-width:560px;margin:var(--space-4) auto 0;font-size:1.05rem;">Everything from
+          birthday bashes to healing therapy — handcrafted experiences with our certified pony herd.</p>
       </div>
     </section>
 
@@ -145,7 +205,6 @@
         <div class="service-tabs reveal">
           <button class="service-tab active" data-tab="parties">🎉 Party Visits</button>
           <button class="service-tab" data-tab="therapy">💚 Therapy Visits</button>
-          <button class="service-tab" data-tab="grooming">✂️ Grooming Add-ons</button>
           <button class="service-tab" data-tab="corporate" id="corporate">🏢 Corporate Events</button>
           <button class="service-tab" data-tab="weddings" id="weddings">💍 Weddings</button>
         </div>
@@ -153,22 +212,33 @@
         <!-- Party Visits -->
         <div class="service-panel active" id="tab-parties">
           <div class="service-feature-row">
-            <div class="reveal">
-              <span class="eyebrow" style="display:inline-flex;align-items:center;gap:8px;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--primary);background:var(--primary-glow);padding:6px 14px;border-radius:9999px;margin-bottom:16px;"><i class="fas fa-birthday-cake"></i> Birthday & Events</span>
+            <div class="reveal service-text">
+              <span class="eyebrow"
+                style="display:inline-flex;align-items:center;gap:8px;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--primary);background:var(--primary-glow);padding:6px 14px;border-radius:9999px;margin-bottom:16px;"><i
+                  class="fas fa-birthday-cake"></i> Birthday & Events</span>
               <h2>Party Pony Visits</h2>
-              <p style="margin:var(--space-4) 0;">Our party ponies are the ultimate birthday surprise. Children get to pet, brush, lead, and ride our certified gentle ponies in a safe, supervised environment.</p>
+              <p style="margin:var(--space-4) 0;">Our party ponies are the ultimate birthday surprise. Children get to
+                pet, brush, lead, and ride our certified gentle ponies in a safe, supervised environment.</p>
               <ul class="service-check-list">
-                <li><span class="check-icon"><i class="fas fa-check"></i></span>1–4 mini horses depending on package</li>
-                <li><span class="check-icon"><i class="fas fa-check"></i></span>Supervised pony rides with helmets provided</li>
-                <li><span class="check-icon"><i class="fas fa-check"></i></span>Grooming station — kids can brush the ponies</li>
-                <li><span class="check-icon"><i class="fas fa-check"></i></span>Photo opportunities with flower-crown ponies</li>
-                <li><span class="check-icon"><i class="fas fa-check"></i></span>Certified handlers manage safety throughout</li>
-                <li><span class="check-icon"><i class="fas fa-check"></i></span>Available 7 days a week, indoors or outdoors</li>
+                <li><span class="check-icon"><i class="fas fa-check"></i></span>1–4 mini horses depending on package
+                </li>
+                <li><span class="check-icon"><i class="fas fa-check"></i></span>Supervised pony rides with helmets
+                  provided</li>
+                <li><span class="check-icon"><i class="fas fa-check"></i></span>Grooming station — kids can brush the
+                  ponies</li>
+                <li><span class="check-icon"><i class="fas fa-check"></i></span>Photo opportunities with flower-crown
+                  ponies</li>
+                <li><span class="check-icon"><i class="fas fa-check"></i></span>Certified handlers manage safety
+                  throughout</li>
+                <li><span class="check-icon"><i class="fas fa-check"></i></span>Available 7 days a week, indoors or
+                  outdoors</li>
               </ul>
-              <a href="contact.html#booking" class="btn btn-primary btn-lg"><i class="fas fa-calendar-check"></i> Book a Party</a>
+              <a href="contact.html#booking" class="btn btn-primary btn-lg"><i class="fas fa-calendar-check"></i> Book a
+                Party</a>
             </div>
             <div class="reveal reveal-delay-2">
-              <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=600&q=80" alt="Party pony visit" class="service-feature-img" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=600&q=80" alt="Party pony visit"
+                class="service-feature-img" loading="lazy">
             </div>
           </div>
 
@@ -179,21 +249,28 @@
           <div class="grid packages-grid">
             <div class="pricing-card reveal reveal-delay-1">
               <div class="card-icon" style="margin:0 auto var(--space-4)"><i class="fas fa-seedling"></i></div>
-              <h3>Pony Peek</h3>
+              <h3>Mini Moments</h3>
+              <p style="font-size:0.9rem;color:var(--text-muted);margin-bottom:var(--space-4);">Perfect starter package
+                for small intimate gatherings.</p>
               <div class="price-amount"><span>$</span>149</div>
               <div class="price-duration">1 hour · Up to 20 guests</div>
               <ul class="price-features">
                 <li><span class="check"><i class="fas fa-check"></i></span>1 Mini Horse</li>
-                <li><span class="check"><i class="fas fa-check"></i></span>Meet & Greet + Feeding</li>
+                <li><span class="check"><i class="fas fa-check"></i></span>Supervised Meet & Greet</li>
                 <li><span class="check"><i class="fas fa-check"></i></span>Photo Opportunities</li>
-                <li><span class="check"><i class="fas fa-check"></i></span>Trained Handler</li>
+                <li><span class="check"><i class="fas fa-check"></i></span>Feeding Session</li>
+                <li><span class="check"><i class="fas fa-check"></i></span>Trained Handler Included</li>
               </ul>
-              <a href="contact.html#booking" class="btn btn-secondary" style="width:100%;justify-content:center;">Book Now</a>
+              <a href="contact.html#booking" class="btn btn-secondary" style="width:100%;justify-content:center;">Book
+                Now</a>
             </div>
             <div class="pricing-card featured reveal reveal-delay-2">
               <span class="pricing-badge">Most Popular</span>
-              <div class="card-icon" style="margin:0 auto var(--space-4);background:var(--primary);color:#fff"><i class="fas fa-crown"></i></div>
-              <h3>Party Parade</h3>
+              <div class="card-icon" style="margin:0 auto var(--space-4);background:var(--primary);color:#fff"><i
+                  class="fas fa-crown"></i></div>
+              <h3>Royal Celebration</h3>
+              <p style="font-size:0.9rem;color:var(--text-muted);margin-bottom:var(--space-4);">The ultimate birthday
+                party experience with rides.</p>
               <div class="price-amount"><span>$</span>299</div>
               <div class="price-duration">2 hours · Up to 40 guests</div>
               <ul class="price-features">
@@ -204,22 +281,25 @@
                 <li><span class="check"><i class="fas fa-check"></i></span>2 Certified Handlers</li>
                 <li><span class="check"><i class="fas fa-check"></i></span>Party Favor Bag</li>
               </ul>
-              <a href="contact.html#booking" class="btn btn-primary" style="width:100%;justify-content:center;">Book Now</a>
+              <a href="contact.html#booking" class="btn btn-primary" style="width:100%;justify-content:center;">Book
+                Now</a>
             </div>
             <div class="pricing-card reveal reveal-delay-3">
               <div class="card-icon" style="margin:0 auto var(--space-4)"><i class="fas fa-star"></i></div>
-              <h3>Grand Gallop</h3>
+              <h3>Grand Gala</h3>
+              <p style="font-size:0.9rem;color:var(--text-muted);margin-bottom:var(--space-4);">Full day luxury event
+                for large celebrations.</p>
               <div class="price-amount"><span>$</span>549</div>
               <div class="price-duration">4 hours · Unlimited guests</div>
               <ul class="price-features">
                 <li><span class="check"><i class="fas fa-check"></i></span>Full Herd (4 Ponies)</li>
                 <li><span class="check"><i class="fas fa-check"></i></span>Pony Rides & Parade</li>
-                <li><span class="check"><i class="fas fa-check"></i></span>Petting Zoo Setup</li>
                 <li><span class="check"><i class="fas fa-check"></i></span>Photography Session</li>
                 <li><span class="check"><i class="fas fa-check"></i></span>3 Handlers + Vet on Call</li>
                 <li><span class="check"><i class="fas fa-check"></i></span>Custom Decorations</li>
               </ul>
-              <a href="contact.html#booking" class="btn btn-secondary" style="width:100%;justify-content:center;">Book Now</a>
+              <a href="contact.html#booking" class="btn btn-secondary" style="width:100%;justify-content:center;">Book
+                Now</a>
             </div>
           </div>
         </div>
@@ -227,128 +307,69 @@
         <!-- Therapy Visits -->
         <div class="service-panel" id="tab-therapy">
           <div class="service-feature-row">
-            <div class="reveal">
-              <span class="eyebrow" style="display:inline-flex;align-items:center;gap:8px;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--primary);background:var(--primary-glow);padding:6px 14px;border-radius:9999px;margin-bottom:16px;"><i class="fas fa-heart"></i> Healing</span>
+            <div class="reveal service-text">
+              <span class="eyebrow"
+                style="display:inline-flex;align-items:center;gap:8px;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--primary);background:var(--primary-glow);padding:6px 14px;border-radius:9999px;margin-bottom:16px;"><i
+                  class="fas fa-heart"></i> Healing</span>
               <h2>Mini Horse Therapy Visits</h2>
-              <p style="margin:var(--space-4) 0;">Our certified therapy ponies provide proven emotional, sensory, and physical benefits. Perfect for individuals with autism, anxiety, PTSD, or those seeking emotional support.</p>
+              <p style="margin:var(--space-4) 0;">Our certified therapy ponies provide proven emotional, sensory, and
+                physical benefits. Perfect for individuals with autism, anxiety, PTSD, or those seeking emotional
+                support.</p>
               <ul class="service-check-list">
-                <li><span class="check-icon"><i class="fas fa-check"></i></span>Certified Animal-Assisted Therapy practitioners</li>
-                <li><span class="check-icon"><i class="fas fa-check"></i></span>In-home, facility, or school visits available</li>
-                <li><span class="check-icon"><i class="fas fa-check"></i></span>Customized session plans for each individual</li>
-                <li><span class="check-icon"><i class="fas fa-check"></i></span>Post-session progress notes provided</li>
-                <li><span class="check-icon"><i class="fas fa-check"></i></span>Regular ongoing session packages available</li>
+                <li><span class="check-icon"><i class="fas fa-check"></i></span>Certified Animal-Assisted Therapy
+                  practitioners</li>
+                <li><span class="check-icon"><i class="fas fa-check"></i></span>In-home, facility, or school visits
+                  available</li>
+                <li><span class="check-icon"><i class="fas fa-check"></i></span>Customized session plans for each
+                  individual</li>
+                <li><span class="check-icon"><i class="fas fa-check"></i></span>Post-session progress notes provided
+                </li>
+                <li><span class="check-icon"><i class="fas fa-check"></i></span>Regular ongoing session packages
+                  available</li>
                 <li><span class="check-icon"><i class="fas fa-check"></i></span>Works alongside existing care teams</li>
               </ul>
-              <div style="display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);">
-                <div style="background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:var(--space-4) var(--space-5);text-align:center;">
-                  <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--primary);">$199</div>
-                  <div style="font-size:0.8rem;color:var(--text-muted);">Single Session (1.5hr)</div>
-                </div>
-                <div style="background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:var(--space-4) var(--space-5);text-align:center;">
-                  <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--primary);">$699</div>
-                  <div style="font-size:0.8rem;color:var(--text-muted);">4-Session Package</div>
-                </div>
-                <div style="background:var(--primary-glow);border:1px solid var(--primary-light);border-radius:var(--radius-lg);padding:var(--space-4) var(--space-5);text-align:center;">
-                  <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--primary);">$1,199</div>
-                  <div style="font-size:0.8rem;color:var(--primary);">8-Session Bundle</div>
-                </div>
-              </div>
+
               <div style="margin-top:var(--space-6);">
-                <a href="contact.html#booking" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Free Consultation</a>
+                <a href="contact.html#booking" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Free
+                  Consultation</a>
               </div>
             </div>
             <div class="reveal reveal-delay-2">
-              <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&q=80" alt="Therapy pony visit" class="service-feature-img" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&q=80"
+                alt="Therapy pony visit" class="service-feature-img" loading="lazy">
             </div>
           </div>
         </div>
 
-        <!-- Grooming Add-ons -->
-        <div class="service-panel" id="tab-grooming">
-          <div class="section-header reveal">
-            <h2>Grooming Add-ons</h2>
-            <p>Upgrade any visit with our fun and photogenic pony styling extras.</p>
-          </div>
-          <div class="addons-grid">
-            <div class="addon-card reveal reveal-delay-1" data-price="35">
-              <span style="font-size:2.5rem;display:block;margin-bottom:var(--space-3);">🌸</span>
-              <h5>Floral Crown</h5>
-              <p style="font-size:0.82rem;color:var(--text-muted);margin:var(--space-2) 0;">Fresh seasonal flowers arranged into a beautiful headpiece</p>
-              <div class="addon-price">+$35</div>
-            </div>
-            <div class="addon-card reveal reveal-delay-2" data-price="25">
-              <span style="font-size:2.5rem;display:block;margin-bottom:var(--space-3);">🎀</span>
-              <h5>Bow & Ribbon Set</h5>
-              <p style="font-size:0.82rem;color:var(--text-muted);margin:var(--space-2) 0;">Matching satin ribbons braided into mane and tail</p>
-              <div class="addon-price">+$25</div>
-            </div>
-            <div class="addon-card reveal reveal-delay-3" data-price="20">
-              <span style="font-size:2.5rem;display:block;margin-bottom:var(--space-3);">✨</span>
-              <h5>Glitter Shimmer</h5>
-              <p style="font-size:0.82rem;color:var(--text-muted);margin:var(--space-2) 0;">Pet-safe cosmetic glitter for sparkle magic</p>
-              <div class="addon-price">+$20</div>
-            </div>
-            <div class="addon-card reveal reveal-delay-4" data-price="15">
-              <span style="font-size:2.5rem;display:block;margin-bottom:var(--space-3);">💅</span>
-              <h5>Hoof Polish</h5>
-              <p style="font-size:0.82rem;color:var(--text-muted);margin:var(--space-2) 0;">Non-toxic hoof shine in your choice of colors</p>
-              <div class="addon-price">+$15</div>
-            </div>
-            <div class="addon-card reveal" data-price="55">
-              <span style="font-size:2.5rem;display:block;margin-bottom:var(--space-3);">🦄</span>
-              <h5>Unicorn Costume</h5>
-              <p style="font-size:0.82rem;color:var(--text-muted);margin:var(--space-2) 0;">Full unicorn horn and sparkle cape outfit</p>
-              <div class="addon-price">+$55</div>
-            </div>
-            <div class="addon-card reveal reveal-delay-1" data-price="45">
-              <span style="font-size:2.5rem;display:block;margin-bottom:var(--space-3);">👸</span>
-              <h5>Princess Costume</h5>
-              <p style="font-size:0.82rem;color:var(--text-muted);margin:var(--space-2) 0;">Regal cape and tiara for the royal pony look</p>
-              <div class="addon-price">+$45</div>
-            </div>
-            <div class="addon-card reveal reveal-delay-2" data-price="120">
-              <span style="font-size:2.5rem;display:block;margin-bottom:var(--space-3);">📸</span>
-              <h5>Photo Package</h5>
-              <p style="font-size:0.82rem;color:var(--text-muted);margin:var(--space-2) 0;">30-min professional photography session</p>
-              <div class="addon-price">+$120</div>
-            </div>
-            <div class="addon-card reveal reveal-delay-3" data-price="30">
-              <span style="font-size:2.5rem;display:block;margin-bottom:var(--space-3);">🎨</span>
-              <h5>Body Art / Stencils</h5>
-              <p style="font-size:0.82rem;color:var(--text-muted);margin:var(--space-2) 0;">Temporary pet-safe paint designs on coat</p>
-              <div class="addon-price">+$30</div>
-            </div>
-          </div>
-          <div style="background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:var(--space-5);margin-top:var(--space-8);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-4);" class="reveal">
-            <div>
-              <h5 style="margin-bottom:var(--space-1);">Selected Add-ons Total:</h5>
-              <p style="font-size:0.85rem;color:var(--text-muted);">Click any card above to select/deselect</p>
-            </div>
-            <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--primary);">$<span class="addons-total">0</span></div>
-          </div>
-          <div style="text-align:center;margin-top:var(--space-6);" class="reveal">
-            <a href="contact.html#booking" class="btn btn-primary btn-lg"><i class="fas fa-plus"></i> Add to Your Booking</a>
-          </div>
-        </div>
 
         <!-- Corporate -->
         <div class="service-panel" id="tab-corporate">
           <div class="service-feature-row">
-            <div class="reveal">
-              <span class="eyebrow" style="display:inline-flex;align-items:center;gap:8px;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--primary);background:var(--primary-glow);padding:6px 14px;border-radius:9999px;margin-bottom:16px;"><i class="fas fa-briefcase"></i> Corporate</span>
+            <div class="reveal service-text">
+              <span class="eyebrow"
+                style="display:inline-flex;align-items:center;gap:8px;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--primary);background:var(--primary-glow);padding:6px 14px;border-radius:9999px;margin-bottom:16px;"><i
+                  class="fas fa-briefcase"></i> Corporate</span>
               <h2>Corporate & Team Events</h2>
-              <p style="margin:var(--space-4) 0;">Boost morale, reduce stress, and create unforgettable team experiences. Our ponies are perfect for company family days, wellness events, and team-building activities.</p>
+              <p style="margin:var(--space-4) 0;">Boost morale, reduce stress, and create unforgettable team
+                experiences. Our ponies are perfect for company family days, wellness events, and team-building
+                activities.</p>
               <ul class="service-check-list">
-                <li><span class="check-icon"><i class="fas fa-check"></i></span>Full-day and half-day event packages</li>
-                <li><span class="check-icon"><i class="fas fa-check"></i></span>Scales to any event size — 50 to 5000+ guests</li>
-                <li><span class="check-icon"><i class="fas fa-check"></i></span>On-site setup and breakdown included</li>
-                <li><span class="check-icon"><i class="fas fa-check"></i></span>Custom branding and signage available</li>
-                <li><span class="check-icon"><i class="fas fa-check"></i></span>Full insurance certificates for venue requirements</li>
+                <li><span class="check-icon"><i class="fas fa-check"></i></span>Full-day and half-day event packages
+                </li>
+                <li><span class="check-icon"><i class="fas fa-check"></i></span>Scales to any event size — 50 to 5000+
+                  guests</li>
+                <li><span class="check-icon"><i class="fas fa-check"></i></span>On-site setup and breakdown included
+                </li>
+                <li><span class="check-icon"><i class="fas fa-check"></i></span>Custom branding and signage available
+                </li>
+                <li><span class="check-icon"><i class="fas fa-check"></i></span>Full insurance certificates for venue
+                  requirements</li>
               </ul>
               <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-envelope"></i> Request a Quote</a>
             </div>
             <div class="reveal reveal-delay-2">
-              <img src="https://images.unsplash.com/photo-1534307671554-9a6d81f4d629?w=600&q=80" alt="Corporate pony event" class="service-feature-img" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1534307671554-9a6d81f4d629?w=600&q=80"
+                alt="Corporate pony event" class="service-feature-img" loading="lazy">
             </div>
           </div>
         </div>
@@ -356,31 +377,31 @@
         <!-- Weddings -->
         <div class="service-panel" id="tab-weddings">
           <div class="service-feature-row">
-            <div class="reveal">
-              <span class="eyebrow" style="display:inline-flex;align-items:center;gap:8px;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--primary);background:var(--primary-glow);padding:6px 14px;border-radius:9999px;margin-bottom:16px;"><i class="fas fa-ring"></i> Weddings</span>
+            <div class="reveal service-text">
+              <span class="eyebrow"
+                style="display:inline-flex;align-items:center;gap:8px;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--primary);background:var(--primary-glow);padding:6px 14px;border-radius:9999px;margin-bottom:16px;"><i
+                  class="fas fa-ring"></i> Weddings</span>
               <h2>Wedding & Special Occasions</h2>
-              <p style="margin:var(--space-4) 0;">Add a touch of fairytale magic to your wedding day. A beautifully styled mini horse can carry the rings, walk in the ceremony, or delight your guests at the reception.</p>
+              <p style="margin:var(--space-4) 0;">Add a touch of fairytale magic to your wedding day. A beautifully
+                styled mini horse can carry the rings, walk in the ceremony, or delight your guests at the reception.
+              </p>
               <ul class="service-check-list">
-                <li><span class="check-icon"><i class="fas fa-check"></i></span>Ring bearer mini horse (floral adorned)</li>
+                <li><span class="check-icon"><i class="fas fa-check"></i></span>Ring bearer mini horse (floral adorned)
+                </li>
                 <li><span class="check-icon"><i class="fas fa-check"></i></span>Ceremony walk and photo backdrop</li>
-                <li><span class="check-icon"><i class="fas fa-check"></i></span>Reception petting experience for guests</li>
-                <li><span class="check-icon"><i class="fas fa-check"></i></span>Full grooming + custom floral styling included</li>
-                <li><span class="check-icon"><i class="fas fa-check"></i></span>Consultation to match your wedding theme</li>
+                <li><span class="check-icon"><i class="fas fa-check"></i></span>Reception petting experience for guests
+                </li>
+                <li><span class="check-icon"><i class="fas fa-check"></i></span>Full grooming + custom floral styling
+                  included</li>
+                <li><span class="check-icon"><i class="fas fa-check"></i></span>Consultation to match your wedding theme
+                </li>
               </ul>
-              <div style="display:flex;gap:var(--space-4);flex-wrap:wrap;margin:var(--space-6) 0;">
-                <div style="background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:var(--space-4) var(--space-5);text-align:center;">
-                  <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--primary);">From $399</div>
-                  <div style="font-size:0.8rem;color:var(--text-muted);">Ceremony Appearance</div>
-                </div>
-                <div style="background:var(--primary-glow);border:1px solid var(--primary-light);border-radius:var(--radius-lg);padding:var(--space-4) var(--space-5);text-align:center;">
-                  <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--primary);">From $749</div>
-                  <div style="font-size:0.8rem;color:var(--primary);">Full Wedding Day</div>
-                </div>
-              </div>
+
               <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-heart"></i> Enquire Now</a>
             </div>
             <div class="reveal reveal-delay-2">
-              <img src="https://images.unsplash.com/photo-1506806732259-39c2d0268443?w=600&q=80" alt="Wedding pony" class="service-feature-img" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1506806732259-39c2d0268443?w=600&q=80" alt="Wedding pony"
+                class="service-feature-img" loading="lazy">
             </div>
           </div>
         </div>
@@ -398,28 +419,56 @@
         <div style="max-width:720px;margin:0 auto;">
           <div class="faq-list">
             <div class="faq-item reveal reveal-delay-1">
-              <button class="faq-question">How much space do I need for a pony visit? <span class="faq-icon"><i class="fas fa-plus"></i></span></button>
-              <div class="faq-answer"><p>Minimum 20×20 ft of flat, open space per pony. This can be a backyard, park, or event venue. We can provide temporary fencing if needed. Please ensure vehicle access for our trailer.</p></div>
+              <button class="faq-question">How much space do I need for a pony visit? <span class="faq-icon"><i
+                    class="fas fa-plus"></i></span></button>
+              <div class="faq-answer">
+                <p>Minimum 20×20 ft of flat, open space per pony. This can be a backyard, park, or event venue. We can
+                  provide temporary fencing if needed. Please ensure vehicle access for our trailer.</p>
+              </div>
             </div>
             <div class="faq-item reveal reveal-delay-2">
-              <button class="faq-question">Are the ponies safe for young children? <span class="faq-icon"><i class="fas fa-plus"></i></span></button>
-              <div class="faq-answer"><p>Absolutely! All our ponies are carefully selected for gentle temperament and undergo thorough training. Our certified handlers supervise all interactions. We provide helmets for all pony rides. We've safely hosted events for children as young as 18 months.</p></div>
+              <button class="faq-question">Are the ponies safe for young children? <span class="faq-icon"><i
+                    class="fas fa-plus"></i></span></button>
+              <div class="faq-answer">
+                <p>Absolutely! All our ponies are carefully selected for gentle temperament and undergo thorough
+                  training. Our certified handlers supervise all interactions. We provide helmets for all pony rides.
+                  We've safely hosted events for children as young as 18 months.</p>
+              </div>
             </div>
             <div class="faq-item reveal reveal-delay-3">
-              <button class="faq-question">What areas do you service? <span class="faq-icon"><i class="fas fa-plus"></i></span></button>
-              <div class="faq-answer"><p>We service a 60-mile radius from our base. Travel fees apply for distances over 30 miles. Contact us to check availability in your area — we also occasionally take extended bookings for special events further afield.</p></div>
+              <button class="faq-question">What areas do you service? <span class="faq-icon"><i
+                    class="fas fa-plus"></i></span></button>
+              <div class="faq-answer">
+                <p>We service a 60-mile radius from our base. Travel fees apply for distances over 30 miles. Contact us
+                  to check availability in your area — we also occasionally take extended bookings for special events
+                  further afield.</p>
+              </div>
             </div>
             <div class="faq-item reveal reveal-delay-4">
-              <button class="faq-question">How far in advance should I book? <span class="faq-icon"><i class="fas fa-plus"></i></span></button>
-              <div class="faq-answer"><p>We recommend booking 4–6 weeks in advance, especially for weekends and holidays. Last-minute bookings (within 2 weeks) may be available — contact us to check. A 50% deposit secures your date.</p></div>
+              <button class="faq-question">How far in advance should I book? <span class="faq-icon"><i
+                    class="fas fa-plus"></i></span></button>
+              <div class="faq-answer">
+                <p>We recommend booking 4–6 weeks in advance, especially for weekends and holidays. Last-minute bookings
+                  (within 2 weeks) may be available — contact us to check. A 50% deposit secures your date.</p>
+              </div>
             </div>
             <div class="faq-item reveal">
-              <button class="faq-question">What happens if it rains on my party day? <span class="faq-icon"><i class="fas fa-plus"></i></span></button>
-              <div class="faq-answer"><p>Light rain is fine if there's a covered area for the ponies. For heavy rain or thunderstorms, we'll work with you to reschedule at no additional charge. We monitor forecasts and will contact you 48 hours in advance if weather looks concerning.</p></div>
+              <button class="faq-question">What happens if it rains on my party day? <span class="faq-icon"><i
+                    class="fas fa-plus"></i></span></button>
+              <div class="faq-answer">
+                <p>Light rain is fine if there's a covered area for the ponies. For heavy rain or thunderstorms, we'll
+                  work with you to reschedule at no additional charge. We monitor forecasts and will contact you 48
+                  hours in advance if weather looks concerning.</p>
+              </div>
             </div>
             <div class="faq-item reveal reveal-delay-1">
-              <button class="faq-question">Do you offer therapy visits to schools and hospitals? <span class="faq-icon"><i class="fas fa-plus"></i></span></button>
-              <div class="faq-answer"><p>Yes! We regularly visit schools, care homes, hospitals, and rehabilitation centers. Our therapy ponies carry full public liability insurance and all handlers have DBS checks. Please contact us for institutional pricing and scheduling.</p></div>
+              <button class="faq-question">Do you offer therapy visits to schools and hospitals? <span
+                  class="faq-icon"><i class="fas fa-plus"></i></span></button>
+              <div class="faq-answer">
+                <p>Yes! We regularly visit schools, care homes, hospitals, and rehabilitation centers. Our therapy
+                  ponies carry full public liability insurance and all handlers have DBS checks. Please contact us for
+                  institutional pricing and scheduling.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -431,48 +480,87 @@
       <div class="container">
         <div class="section-header reveal">
           <h2 style="color:#fff;">Ready to Book Your Experience?</h2>
-          <p style="color:rgba(255,255,255,0.8);">Fill out our easy online booking form and we'll confirm your date within 24 hours.</p>
+          <p style="color:rgba(255,255,255,0.8);">Fill out our easy online booking form and we'll confirm your date
+            within 24 hours.</p>
         </div>
         <div class="cta-actions reveal">
-          <a href="contact.html#booking" class="btn btn-white btn-lg"><i class="fas fa-calendar-check"></i> Book Online Now</a>
-          <a href="contact.html" class="btn" style="border:2px solid rgba(255,255,255,0.5);color:#fff;padding:var(--space-4) var(--space-8);border-radius:var(--radius-full);font-size:1.05rem;font-weight:600;"><i class="fas fa-envelope"></i> Send an Enquiry</a>
+          <a href="contact.html#booking" class="btn btn-white btn-lg"><i class="fas fa-calendar-check"></i> Book Online
+            Now</a>
+          <a href="contact.html" class="btn"
+            style="border:2px solid rgba(255,255,255,0.5);color:#fff;padding:var(--space-4) var(--space-8);border-radius:var(--radius-full);font-size:1.05rem;font-weight:600;"><i
+              class="fas fa-envelope"></i> Send an Enquiry</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="../index.html" class="brand" style="margin-bottom:var(--space-4);display:inline-flex;"><div class="brand-logo">🐴</div><span class="brand-name">Pony Party</span></a>
-          <p class="footer-desc">Bringing magical pony experiences to your events since 2018.</p>
+          <a href="index.html" class="brand" style="margin-bottom:var(--space-4);display:inline-flex;">
+            <div class="brand-logo">🐴</div>
+            <span class="brand-name">Pony Party</span>
+          </a>
+          <p class="footer-desc">Bringing magical pony experiences to your events since 2018. Certified, insured, and
+            always adorable.</p>
           <div class="footer-socials">
-            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
-        <div class="footer-col"><h5>Services</h5><ul class="footer-links">
-          <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Party Visits</a></li>
-          <li><a href="services.html#therapy" class="footer-link"><i class="fas fa-chevron-right"></i> Therapy Visits</a></li>
-          <li><a href="services.html#grooming" class="footer-link"><i class="fas fa-chevron-right"></i> Grooming Add-ons</a></li>
-          <li><a href="services.html#corporate" class="footer-link"><i class="fas fa-chevron-right"></i> Corporate Events</a></li>
-        </ul></div>
-        <div class="footer-col"><h5>Company</h5><ul class="footer-links">
-          <li><a href="about.html" class="footer-link"><i class="fas fa-chevron-right"></i> About Us</a></li>
-          <li><a href="blog.html" class="footer-link"><i class="fas fa-chevron-right"></i> Blog</a></li>
-          <li><a href="contact.html" class="footer-link"><i class="fas fa-chevron-right"></i> Contact</a></li>
-        </ul></div>
-        <div class="footer-col"><h5>Legal</h5><ul class="footer-links">
-          <li><a href="#" class="footer-link"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
-          <li><a href="#" class="footer-link"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
-        </ul></div>
+
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul class="footer-links">
+            <li><a href="pages/services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Party Visits</a>
+            </li>
+            <li><a href="pages/services.html#therapy" class="footer-link"><i class="fas fa-chevron-right"></i> Therapy
+                Visits</a></li>
+            <li><a href="pages/services.html#grooming" class="footer-link"><i class="fas fa-chevron-right"></i> Grooming
+                Add-ons</a></li>
+            <li><a href="pages/services.html#corporate" class="footer-link"><i class="fas fa-chevron-right"></i>
+                Corporate Events</a></li>
+            <li><a href="pages/services.html#weddings" class="footer-link"><i class="fas fa-chevron-right"></i>
+                Weddings</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul class="footer-links">
+            <li><a href="pages/about.html" class="footer-link"><i class="fas fa-chevron-right"></i> About Us</a></li>
+            <li><a href="pages/about.html#ponies" class="footer-link"><i class="fas fa-chevron-right"></i> Our
+                Ponies</a></li>
+            <li><a href="pages/blog.html" class="footer-link"><i class="fas fa-chevron-right"></i> Blog</a></li>
+            <li><a href="pages/contact.html" class="footer-link"><i class="fas fa-chevron-right"></i> Contact</a></li>
+            <li><a href="pages/coming-soon.html" class="footer-link"><i class="fas fa-chevron-right"></i> Coming
+                Soon</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Support</h5>
+          <ul class="footer-links">
+            <li><a href="pages/contact.html#faq" class="footer-link"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+            <li><a href="pages/contact.html#booking" class="footer-link"><i class="fas fa-chevron-right"></i> Book
+                Online</a></li>
+            <li><a href="#" class="footer-link"><i class="fas fa-chevron-right"></i> Paddock Guide</a></li>
+            <li><a href="#" class="footer-link"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+            <li><a href="#" class="footer-link"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+          </ul>
+        </div>
       </div>
+
       <div class="footer-bottom">
-        <p class="footer-copy">© 2025 Pony Party. All rights reserved.</p>
-        <div class="footer-bottom-links"><a href="#">Privacy</a><a href="#">Terms</a></div>
+        <p class="footer-copy">© 2026 Pony Party. All rights reserved. Made with 🐴 and love.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+        </div>
       </div>
     </div>
   </footer>
@@ -494,10 +582,11 @@
     // Handle hash links
     const hash = window.location.hash;
     if (hash) {
-      const tabId = hash.replace('#','');
+      const tabId = hash.replace('#', '');
       const tab = document.querySelector(`[data-tab="${tabId}"]`);
       if (tab) tab.click();
     }
   </script>
 </body>
+
 </html>

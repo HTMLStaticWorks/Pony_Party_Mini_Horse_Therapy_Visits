@@ -8,44 +8,15 @@
   text-align: right;
 }
 
-[dir="rtl"] .header-inner {
-  flex-direction: row-reverse;
-}
+/* Header & Nav native RTL handles most flips, 
+   but we ensure specific alignment and icon flips */
 
-[dir="rtl"] .header-actions {
-  flex-direction: row-reverse;
-}
-
-[dir="rtl"] .nav-list {
-  flex-direction: row-reverse;
-}
-
-[dir="rtl"] .brand {
-  flex-direction: row-reverse;
+[dir="rtl"] .auth-topbar {
+  justify-content: flex-start; /* Moves icons to the right side in RTL context */
 }
 
 [dir="rtl"] .section-header {
   text-align: center;
-}
-
-[dir="rtl"] .hero-actions {
-  flex-direction: row-reverse;
-}
-
-[dir="rtl"] .hero-stats {
-  flex-direction: row-reverse;
-}
-
-[dir="rtl"] .hero-inner {
-  direction: rtl;
-}
-
-[dir="rtl"] .card-body {
-  text-align: center;
-}
-
-[dir="rtl"] .footer-link {
-  flex-direction: row-reverse;
 }
 
 [dir="rtl"] .footer-link:hover {
@@ -53,24 +24,12 @@
   padding-right: var(--space-2);
 }
 
-[dir="rtl"] .footer-grid {
-  direction: rtl;
-}
-
-[dir="rtl"] .footer-bottom {
-  flex-direction: row-reverse;
-}
-
 [dir="rtl"] .mobile-menu {
-  transform: translateX(-100%);
+  transform: translateX(100%); /* Slide from right in RTL */
 }
 
 [dir="rtl"] .mobile-menu.open {
   transform: translateX(0);
-}
-
-[dir="rtl"] .mobile-nav-link {
-  flex-direction: row-reverse;
 }
 
 [dir="rtl"] .back-to-top {
@@ -88,39 +47,6 @@
   left: var(--space-4);
 }
 
-[dir="rtl"] .testimonial-author {
-  flex-direction: row-reverse;
-}
-
-[dir="rtl"] .therapy-step {
-  flex-direction: row-reverse;
-}
-
-[dir="rtl"] .req-item {
-  flex-direction: row-reverse;
-}
-
-[dir="rtl"] .breadcrumb {
-  flex-direction: row-reverse;
-}
-
-[dir="rtl"] .price-features li {
-  flex-direction: row-reverse;
-}
-
-[dir="rtl"] .form-row-between {
-  flex-direction: row-reverse;
-}
-
-[dir="rtl"] .faq-question {
-  text-align: right;
-  flex-direction: row-reverse;
-}
-
-[dir="rtl"] .contact-info-card {
-  text-align: center;
-}
-
 [dir="rtl"] .input-icon-btn {
   right: auto;
   left: var(--space-3);
@@ -131,24 +57,13 @@
   padding-left: var(--space-10);
 }
 
-[dir="rtl"] .auth-topbar {
-  flex-direction: row-reverse;
+/* Fix for icons and text that need specific RTL padding/margin */
+[dir="rtl"] .fa-chevron-right {
+  transform: scaleX(-1);
 }
 
-[dir="rtl"] .social-btn {
-  flex-direction: row-reverse;
-}
-
-[dir="rtl"] .btn {
-  flex-direction: row-reverse;
-}
-
-[dir="rtl"] .form-check {
-  flex-direction: row-reverse;
-}
-
-[dir="rtl"] .blog-meta {
-  flex-direction: row-reverse;
+[dir="rtl"] .fa-arrow-right {
+  transform: scaleX(-1);
 }
 
 [dir="rtl"] .hero-float-1 {

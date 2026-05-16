@@ -72,6 +72,7 @@ const RTLManager = {
   }
 };
 
+
 // =============================================
 // HEADER / NAVIGATION
 // =============================================
@@ -166,7 +167,7 @@ const BackToTop = {
     if (!this.btn) return;
 
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 400) {
+      if (window.scrollY > 300) {
         this.btn.classList.add('visible');
       } else {
         this.btn.classList.remove('visible');

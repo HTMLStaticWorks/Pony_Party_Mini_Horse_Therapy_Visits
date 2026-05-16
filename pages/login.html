@@ -15,7 +15,7 @@
 <body>
   <div class="auth-page">
 
-    <!-- Top bar with RTL + Theme -->
+    <!-- Top bar with Theme -->
     <div class="auth-topbar">
       <button class="rtl-toggle">RTL</button>
       <button class="theme-toggle">🌙</button>
@@ -25,10 +25,10 @@
       <div class="auth-card">
 
         <!-- Logo -->
-        <div class="auth-logo">
+        <a href="../index.html" class="auth-logo" style="text-decoration: none;">
           <div class="auth-brand-logo">🐴</div>
           <span class="auth-brand-name">Pony Party</span>
-        </div>
+        </a>
 
         <h2 class="auth-title">Welcome Back</h2>
         <p class="auth-subtitle">Access your booking history and pony visit details</p>
@@ -54,7 +54,7 @@
             <label class="form-check">
               <input type="checkbox" id="remember"> Remember Me
             </label>
-            <a href="#" style="font-size:0.9rem;color:var(--primary);font-weight:600;transition:color var(--transition-base);">Forgot Password?</a>
+            <a href="#" class="auth-link">Forgot Password?</a>
           </div>
 
           <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;margin-bottom:var(--space-5);">

@@ -28,7 +28,7 @@
           </ul>
         </nav>
         <div class="header-actions">
-          <button class="rtl-toggle">RTL</button>
+          <button class="rtl-toggle" aria-label="Toggle RTL">RTL</button>
           <button class="theme-toggle">🌙</button>
           <a href="login.html" class="btn-login hide-mobile">Login</a>
           <button class="hamburger"><span></span><span></span><span></span></button>
@@ -47,6 +47,10 @@
       <li><a href="contact.html" class="mobile-nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
     </ul>
     <div class="mobile-menu-footer">
+      <div class="toggles-row">
+        <button class="rtl-toggle">RTL</button>
+        <button class="theme-toggle">🌙</button>
+      </div>
       <a href="login.html" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;">Login</a>
     </div>
   </div>
@@ -64,29 +68,31 @@
     <!-- SECTION 1: STORY + MISSION -->
     <section class="section">
       <div class="container">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);align-items:center;" class="about-grid">
-          <div class="reveal">
-            <span class="eyebrow" style="display:inline-flex;align-items:center;gap:var(--space-2);font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--primary);background:var(--primary-glow);padding:var(--space-2) var(--space-4);border-radius:var(--radius-full);margin-bottom:var(--space-4);"><i class="fas fa-book-open"></i> Our Story</span>
-            <h2>Born from a Love of Horses</h2>
-            <p style="margin:var(--space-4) 0;">It all started when founder Emma Rose brought her mini horse, Daisy, to her niece's birthday party in 2018. The joy on every child's face was indescribable — and the idea for Pony Party was born that afternoon.</p>
-            <p>Today, we operate a certified herd of 12 carefully trained ponies, a team of passionate handlers, and a mission to bring healing and happiness to every event we attend. From birthday parties to hospital therapy visits, we believe every moment deserves a little magic.</p>
-            <div style="display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-8);">
-              <div style="text-align:center;">
-                <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--primary);">2018</div>
-                <div style="font-size:0.8rem;color:var(--text-muted);">Founded</div>
-              </div>
-              <div style="text-align:center;">
-                <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--primary);">12</div>
-                <div style="font-size:0.8rem;color:var(--text-muted);">Ponies</div>
-              </div>
-              <div style="text-align:center;">
-                <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--primary);">500+</div>
-                <div style="font-size:0.8rem;color:var(--text-muted);">Events</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);align-items:stretch;" class="about-grid">
+          <div class="reveal" style="display:flex;flex-direction:column;justify-content:center;text-align:center;">
+            <div style="max-width:540px;margin:0 auto;">
+              <span class="eyebrow" style="display:inline-flex;align-items:center;gap:var(--space-2);font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--primary);background:var(--primary-glow);padding:var(--space-2) var(--space-4);border-radius:var(--radius-full);margin-bottom:var(--space-4);"><i class="fas fa-book-open"></i> Our Story</span>
+              <h2>Born from a Love of Horses</h2>
+              <p style="margin:var(--space-4) 0;">It all started when founder Emma Rose brought her mini horse, Daisy, to her niece's birthday party in 2018. The joy on every child's face was indescribable — and the idea for Pony Party was born that afternoon.</p>
+              <p>Today, we operate a certified herd of 12 carefully trained ponies, a team of passionate handlers, and a mission to bring healing and happiness to every event we attend. From birthday parties to hospital therapy visits, we believe every moment deserves a little magic.</p>
+              <div style="display:flex;gap:var(--space-8);justify-content:center;flex-wrap:wrap;margin-top:var(--space-8);">
+                <div style="text-align:center;">
+                  <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--primary);">2018</div>
+                  <div style="font-size:0.8rem;color:var(--text-muted);">Founded</div>
+                </div>
+                <div style="text-align:center;">
+                  <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--primary);">12</div>
+                  <div style="font-size:0.8rem;color:var(--text-muted);">Ponies</div>
+                </div>
+                <div style="text-align:center;">
+                  <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--primary);">500+</div>
+                  <div style="font-size:0.8rem;color:var(--text-muted);">Events</div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="reveal reveal-delay-2">
-            <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=600&q=80" alt="Pony Party story" style="border-radius:var(--radius-xl);box-shadow:var(--shadow-lg);width:100%;aspect-ratio:4/3;object-fit:cover;" loading="lazy">
+          <div class="reveal reveal-delay-2" style="display:flex;">
+            <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800&q=80" alt="Pony Party story" style="border-radius:var(--radius-xl);box-shadow:var(--shadow-lg);width:100%;height:100%;object-fit:cover;" loading="lazy">
           </div>
         </div>
         <style>
@@ -105,28 +111,121 @@
         </div>
         <div class="team-grid">
           <div class="team-card reveal reveal-delay-1">
-            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b7e4?w=200&q=80" alt="Emma Rose" class="team-avatar" loading="lazy">
-            <h4>Emma Rose</h4>
-            <p style="font-size:0.85rem;color:var(--primary);font-weight:600;margin-bottom:var(--space-2);">Founder & Lead Handler</p>
-            <p style="font-size:0.85rem;">Certified equine therapist with 15+ years experience. Emma's connection with horses is truly extraordinary.</p>
+            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b7e4?w=400&q=80" alt="Emma Rose" class="team-avatar" loading="lazy">
+            <div class="team-info">
+              <h4>Emma Rose</h4>
+              <p style="font-size:0.85rem;color:var(--primary);font-weight:600;margin-bottom:var(--space-2);">Founder & Lead Handler</p>
+              <p style="font-size:0.85rem;margin-bottom:var(--space-4);">Certified equine therapist with 15+ years experience. Emma personally selects and trains every pony in our herd.</p>
+              <div class="team-socials">
+                <a href="#" class="team-social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="team-social-link"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+              <a href="#" class="btn btn-ghost btn-sm" style="margin-top:auto;font-size:0.8rem;">Read Full Bio</a>
+            </div>
           </div>
           <div class="team-card reveal reveal-delay-2">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80" alt="Tom Harding" class="team-avatar" loading="lazy">
-            <h4>Tom Harding</h4>
-            <p style="font-size:0.85rem;color:var(--primary);font-weight:600;margin-bottom:var(--space-2);">Head of Therapy Programs</p>
-            <p style="font-size:0.85rem;">Licensed therapist and certified Animal-Assisted Therapy practitioner with hospital outreach experience.</p>
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Tom Harding" class="team-avatar" loading="lazy">
+            <div class="team-info">
+              <h4>Tom Harding</h4>
+              <p style="font-size:0.85rem;color:var(--primary);font-weight:600;margin-bottom:var(--space-2);">Head of Therapy Programs</p>
+              <p style="font-size:0.85rem;margin-bottom:var(--space-4);">Licensed therapist and Animal-Assisted Therapy practitioner. Tom leads our specialized sensory programs.</p>
+              <div class="team-socials">
+                <a href="#" class="team-social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="team-social-link"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+              <a href="#" class="btn btn-ghost btn-sm" style="margin-top:auto;font-size:0.8rem;">Read Full Bio</a>
+            </div>
           </div>
           <div class="team-card reveal reveal-delay-3">
-            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80" alt="Sara Lin" class="team-avatar" loading="lazy">
-            <h4>Sara Lin</h4>
-            <p style="font-size:0.85rem;color:var(--primary);font-weight:600;margin-bottom:var(--space-2);">Event & Booking Coordinator</p>
-            <p style="font-size:0.85rem;">Brings 8 years of event planning experience ensuring every visit runs smoothly from first call to final bow.</p>
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80" alt="Sara Lin" class="team-avatar" loading="lazy">
+            <div class="team-info">
+              <h4>Sara Lin</h4>
+              <p style="font-size:0.85rem;color:var(--primary);font-weight:600;margin-bottom:var(--space-2);">Event Coordinator</p>
+              <p style="font-size:0.85rem;margin-bottom:var(--space-4);">Brings 8 years of planning experience. Sara is the mastermind behind our custom-themed party experiences.</p>
+              <div class="team-socials">
+                <a href="#" class="team-social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="team-social-link"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+              <a href="#" class="btn btn-ghost btn-sm" style="margin-top:auto;font-size:0.8rem;">Read Full Bio</a>
+            </div>
           </div>
           <div class="team-card reveal reveal-delay-4">
-            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80" alt="Jake Miller" class="team-avatar" loading="lazy">
-            <h4>Jake Miller</h4>
-            <p style="font-size:0.85rem;color:var(--primary);font-weight:600;margin-bottom:var(--space-2);">Pony Care & Nutrition</p>
-            <p style="font-size:0.85rem;">Veterinary technician and equine nutritionist who ensures every pony is healthy, happy, and ready to shine.</p>
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80" alt="Jake Miller" class="team-avatar" loading="lazy">
+            <div class="team-info">
+              <h4>Jake Miller</h4>
+              <p style="font-size:0.85rem;color:var(--primary);font-weight:600;margin-bottom:var(--space-2);">Pony Care Specialist</p>
+              <p style="font-size:0.85rem;margin-bottom:var(--space-4);">Equine nutritionist who ensures every pony is healthy. Jake manages our state-of-the-art paddock protocols.</p>
+              <div class="team-socials">
+                <a href="#" class="team-social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="team-social-link"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+              <a href="#" class="btn btn-ghost btn-sm" style="margin-top:auto;font-size:0.8rem;">Read Full Bio</a>
+            </div>
+          </div>
+          <div class="team-card reveal reveal-delay-1">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80" alt="Lisa Chen" class="team-avatar" loading="lazy">
+            <div class="team-info">
+              <h4>Lisa Chen</h4>
+              <p style="font-size:0.85rem;color:var(--primary);font-weight:600;margin-bottom:var(--space-2);">Safety & Operations</p>
+              <p style="font-size:0.85rem;margin-bottom:var(--space-4);">Ensures all interaction between ponies and children is safe. Lisa manages our on-site safety protocols.</p>
+              <div class="team-socials">
+                <a href="#" class="team-social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="team-social-link"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+              <a href="#" class="btn btn-ghost btn-sm" style="margin-top:auto;font-size:0.8rem;">Read Full Bio</a>
+            </div>
+          </div>
+          <div class="team-card reveal reveal-delay-2">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80" alt="David Park" class="team-avatar" loading="lazy">
+            <div class="team-info">
+              <h4>David Park</h4>
+              <p style="font-size:0.85rem;color:var(--primary);font-weight:600;margin-bottom:var(--space-2);">Therapeutic Instructor</p>
+              <p style="font-size:0.85rem;margin-bottom:var(--space-4);">Specializes in adaptive riding programs. David's patience and gentle approach are legendary in our community.</p>
+              <div class="team-socials">
+                <a href="#" class="team-social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="team-social-link"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+              <a href="#" class="btn btn-ghost btn-sm" style="margin-top:auto;font-size:0.8rem;">Read Full Bio</a>
+            </div>
+          </div>
+          <div class="team-card reveal reveal-delay-3">
+            <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&q=80" alt="Maria Garcia" class="team-avatar" loading="lazy">
+            <div class="team-info">
+              <h4>Maria Garcia</h4>
+              <p style="font-size:0.85rem;color:var(--primary);font-weight:600;margin-bottom:var(--space-2);">Community Outreach</p>
+              <p style="font-size:0.85rem;margin-bottom:var(--space-4);">Connects our therapy programs with local schools. Maria is passionate about making pony therapy accessible.</p>
+              <div class="team-socials">
+                <a href="#" class="team-social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="team-social-link"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+              <a href="#" class="btn btn-ghost btn-sm" style="margin-top:auto;font-size:0.8rem;">Read Full Bio</a>
+            </div>
+          </div>
+          <div class="team-card reveal reveal-delay-4">
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80" alt="Chris Evans" class="team-avatar" loading="lazy">
+            <div class="team-info">
+              <h4>Chris Evans</h4>
+              <p style="font-size:0.85rem;color:var(--primary);font-weight:600;margin-bottom:var(--space-2);">Senior Horse Trainer</p>
+              <p style="font-size:0.85rem;margin-bottom:var(--space-4);">Focuses on socialization and behavior training. Chris ensures every pony is calm and confident for visits.</p>
+              <div class="team-socials">
+                <a href="#" class="team-social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="team-social-link"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+              <a href="#" class="btn btn-ghost btn-sm" style="margin-top:auto;font-size:0.8rem;">Read Full Bio</a>
+            </div>
+          </div>
+          <div class="team-card reveal">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80" alt="Ryan Taylor" class="team-avatar" loading="lazy">
+            <div class="team-info">
+              <h4>Ryan Taylor</h4>
+              <p style="font-size:0.85rem;color:var(--primary);font-weight:600;margin-bottom:var(--space-2);">Stable Manager</p>
+              <p style="font-size:0.85rem;margin-bottom:var(--space-4);">Oversees the daily health and well-being of our ponies, ensuring the highest standards of animal care and nutrition.</p>
+              <div class="team-socials">
+                <a href="#" class="team-social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="team-social-link"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+              <a href="#" class="btn btn-ghost btn-sm" style="margin-top:auto;font-size:0.8rem;">Read Full Bio</a>
+            </div>
           </div>
         </div>
       </div>
@@ -147,39 +246,64 @@
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="../index.html" class="brand" style="margin-bottom:var(--space-4);display:inline-flex;">
-            <div class="brand-logo">🐴</div><span class="brand-name">Pony Party</span>
+          <a href="index.html" class="brand" style="margin-bottom:var(--space-4);display:inline-flex;">
+            <div class="brand-logo">🐴</div>
+            <span class="brand-name">Pony Party</span>
           </a>
-          <p class="footer-desc">Bringing magical pony experiences to your events since 2018.</p>
+          <p class="footer-desc">Bringing magical pony experiences to your events since 2018. Certified, insured, and always adorable.</p>
           <div class="footer-socials">
-            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
-        <div class="footer-col"><h5>Services</h5><ul class="footer-links">
-          <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Party Visits</a></li>
-          <li><a href="services.html#therapy" class="footer-link"><i class="fas fa-chevron-right"></i> Therapy Visits</a></li>
-          <li><a href="services.html#grooming" class="footer-link"><i class="fas fa-chevron-right"></i> Grooming Add-ons</a></li>
-        </ul></div>
-        <div class="footer-col"><h5>Company</h5><ul class="footer-links">
-          <li><a href="about.html" class="footer-link"><i class="fas fa-chevron-right"></i> About Us</a></li>
-          <li><a href="blog.html" class="footer-link"><i class="fas fa-chevron-right"></i> Blog</a></li>
-          <li><a href="contact.html" class="footer-link"><i class="fas fa-chevron-right"></i> Contact</a></li>
-        </ul></div>
-        <div class="footer-col"><h5>Legal</h5><ul class="footer-links">
-          <li><a href="#" class="footer-link"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
-          <li><a href="#" class="footer-link"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
-        </ul></div>
+
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul class="footer-links">
+            <li><a href="pages/services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Party Visits</a></li>
+            <li><a href="pages/services.html#therapy" class="footer-link"><i class="fas fa-chevron-right"></i> Therapy Visits</a></li>
+            <li><a href="pages/services.html#grooming" class="footer-link"><i class="fas fa-chevron-right"></i> Grooming Add-ons</a></li>
+            <li><a href="pages/services.html#corporate" class="footer-link"><i class="fas fa-chevron-right"></i> Corporate Events</a></li>
+            <li><a href="pages/services.html#weddings" class="footer-link"><i class="fas fa-chevron-right"></i> Weddings</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul class="footer-links">
+            <li><a href="pages/about.html" class="footer-link"><i class="fas fa-chevron-right"></i> About Us</a></li>
+            <li><a href="pages/about.html#ponies" class="footer-link"><i class="fas fa-chevron-right"></i> Our Ponies</a></li>
+            <li><a href="pages/blog.html" class="footer-link"><i class="fas fa-chevron-right"></i> Blog</a></li>
+            <li><a href="pages/contact.html" class="footer-link"><i class="fas fa-chevron-right"></i> Contact</a></li>
+            <li><a href="pages/coming-soon.html" class="footer-link"><i class="fas fa-chevron-right"></i> Coming Soon</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Support</h5>
+          <ul class="footer-links">
+            <li><a href="pages/contact.html#faq" class="footer-link"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+            <li><a href="pages/contact.html#booking" class="footer-link"><i class="fas fa-chevron-right"></i> Book Online</a></li>
+            <li><a href="#" class="footer-link"><i class="fas fa-chevron-right"></i> Paddock Guide</a></li>
+            <li><a href="#" class="footer-link"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+            <li><a href="#" class="footer-link"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+          </ul>
+        </div>
       </div>
+
       <div class="footer-bottom">
-        <p class="footer-copy">© 2025 Pony Party. All rights reserved.</p>
-        <div class="footer-bottom-links"><a href="#">Privacy</a><a href="#">Terms</a></div>
+        <p class="footer-copy">© 2026 Pony Party. All rights reserved. Made with 🐴 and love.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+        </div>
       </div>
     </div>
   </footer>

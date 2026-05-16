@@ -1,17 +1,40 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Pony Party Blog - Tips, stories, and guides about pony parties, therapy visits, and mini horse care.">
+  <meta name="description"
+    content="Pony Party Blog - Tips, stories, and guides about pony parties, therapy visits, and mini horse care.">
   <title>Blog | Pony Party</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/dark-mode.css">
   <link rel="stylesheet" href="../assets/css/rtl.css">
   <style>
+    @media (min-width: 992px) {
+
+      .features-grid,
+      .pony-grid,
+      .grooming-grid,
+      .requirements-list,
+      .grooming-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+
+      .blog-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .blog-grid> :nth-child(9) {
+        display: none;
+      }
+    }
+
     .blog-featured {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -19,7 +42,17 @@
       margin-bottom: var(--space-12);
       align-items: center;
     }
-    @media(max-width:767px){ .blog-featured { grid-template-columns: 1fr; } }
+
+    @media(max-width:768px) {
+      .blog-featured {
+        grid-template-columns: 1fr;
+      }
+
+      .blog-grid> :nth-child(9) {
+        display: none;
+      }
+    }
+
     .blog-featured-img {
       width: 100%;
       border-radius: var(--radius-xl);
@@ -27,6 +60,7 @@
       object-fit: cover;
       box-shadow: var(--shadow-lg);
     }
+
     .blog-filter {
       display: flex;
       gap: var(--space-2);
@@ -34,6 +68,34 @@
       justify-content: center;
       margin-bottom: var(--space-8);
     }
+
+    .blog-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-3);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: var(--space-4);
+      padding-top: var(--space-4);
+      border-top: 1px solid var(--border-light);
+    }
+
+    .blog-read-link {
+      color: var(--primary);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      transition: all var(--transition-base);
+    }
+
+    .blog-read-link:hover {
+      color: var(--primary-dark);
+      gap: var(--space-3);
+      text-decoration: underline;
+    }
+
     .filter-btn {
       padding: var(--space-2) var(--space-4);
       border-radius: var(--radius-full);
@@ -46,11 +108,14 @@
       transition: all var(--transition-base);
       font-family: var(--font-body);
     }
-    .filter-btn:hover, .filter-btn.active {
+
+    .filter-btn:hover,
+    .filter-btn.active {
       background: var(--primary);
       border-color: var(--primary);
       color: #fff;
     }
+
     .newsletter-box {
       background: linear-gradient(135deg, var(--primary-glow), var(--bg-secondary));
       border: 1px solid var(--primary-light);
@@ -60,6 +125,7 @@
       max-width: 600px;
       margin: 0 auto;
     }
+
     .newsletter-form {
       display: flex;
       gap: var(--space-3);
@@ -67,6 +133,7 @@
       flex-wrap: wrap;
       justify-content: center;
     }
+
     .newsletter-form input {
       flex: 1;
       min-width: 220px;
@@ -79,14 +146,31 @@
       font-family: var(--font-body);
       transition: border-color var(--transition-base);
     }
-    .newsletter-form input:focus { border-color: var(--primary); outline: none; }
+
+    .newsletter-form input:focus {
+      border-color: var(--primary);
+      outline: none;
+    }
+
+    @media(max-width:480px) {
+
+      .newsletter-form input,
+      .newsletter-form button {
+        width: 100%;
+        flex: none;
+        min-width: 0;
+      }
+    }
   </style>
 </head>
+
 <body>
   <header class="site-header">
     <div class="container">
       <div class="header-inner">
-        <a href="../index.html" class="brand"><div class="brand-logo">🐴</div><span class="brand-name">Pony Party</span></a>
+        <a href="../index.html" class="brand">
+          <div class="brand-logo">🐴</div><span class="brand-name">Pony Party</span>
+        </a>
         <nav class="header-nav">
           <ul class="nav-list">
             <li><a href="../index.html" class="nav-link">Home</a></li>
@@ -98,7 +182,7 @@
           </ul>
         </nav>
         <div class="header-actions">
-          <button class="rtl-toggle">RTL</button>
+          <button class="rtl-toggle" aria-label="Toggle RTL">RTL</button>
           <button class="theme-toggle">🌙</button>
           <a href="login.html" class="btn-login hide-mobile">Login</a>
           <button class="hamburger"><span></span><span></span><span></span></button>
@@ -117,6 +201,10 @@
       <li><a href="contact.html" class="mobile-nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
     </ul>
     <div class="mobile-menu-footer">
+      <div class="toggles-row">
+        <button class="rtl-toggle">RTL</button>
+        <button class="theme-toggle">🌙</button>
+      </div>
       <a href="login.html" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;">Login</a>
     </div>
   </div>
@@ -126,7 +214,8 @@
       <div class="container">
         <div class="breadcrumb"><a href="../index.html">Home</a> <i class="fas fa-chevron-right"></i> Blog</div>
         <h1 class="reveal">Pony Party Blog</h1>
-        <p class="reveal" style="max-width:560px;margin:var(--space-4) auto 0;font-size:1.05rem;">Tips, stories, guides, and magical moments from the pony world.</p>
+        <p class="reveal" style="max-width:560px;margin:var(--space-4) auto 0;font-size:1.05rem;">Tips, stories, guides,
+          and magical moments from the pony world.</p>
       </div>
     </section>
 
@@ -139,15 +228,21 @@
         </div>
         <div class="blog-featured reveal">
           <div>
-            <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=700&q=80" alt="Featured blog post" class="blog-featured-img" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=700&q=80" alt="Featured blog post"
+              class="blog-featured-img" loading="lazy">
           </div>
-          <div>
+          <div style="display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;">
             <span class="blog-category">Therapy</span>
             <h2 style="margin:var(--space-4) 0;">How Mini Horses Are Transforming Autism Therapy in 2025</h2>
-            <p>Research increasingly shows that animal-assisted therapy with mini horses produces remarkable results for children on the autism spectrum. We explore the science, the stories, and what to expect from a therapy session...</p>
-            <div style="display:flex;align-items:center;gap:var(--space-4);margin-top:var(--space-6);flex-wrap:wrap;">
-              <div style="display:flex;align-items:center;gap:var(--space-3);">
-                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b7e4?w=60&q=80" alt="Emma Rose" style="width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid var(--primary-light);" loading="lazy">
+            <p>Research increasingly shows that animal-assisted therapy with mini horses produces remarkable results for
+              children on the autism spectrum. We explore the science, the stories, and what to expect from a therapy
+              session...</p>
+            <div
+              style="display:flex;align-items:center;justify-content:center;gap:var(--space-4);margin-top:var(--space-6);flex-wrap:wrap;width:100%;">
+              <div style="display:flex;align-items:center;gap:var(--space-3);text-align:left;">
+                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b7e4?w=60&q=80" alt="Emma Rose"
+                  style="width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid var(--primary-light);"
+                  loading="lazy">
                 <div>
                   <div style="font-size:0.85rem;font-weight:600;">Emma Rose</div>
                   <div style="font-size:0.78rem;color:var(--text-muted);">June 2, 2025 · 8 min read</div>
@@ -178,91 +273,178 @@
         <div class="blog-grid">
           <div class="blog-card reveal reveal-delay-1">
             <div class="blog-img-wrap">
-              <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=500&q=80" alt="Blog post" class="blog-img" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=500&q=80" alt="Blog post"
+                class="blog-img" loading="lazy">
             </div>
             <div class="blog-content">
               <span class="blog-category">Party Tips</span>
-              <h4 style="margin:var(--space-2) 0 var(--space-2);">10 Tips for Planning the Perfect Pony Birthday Party</h4>
-              <p style="font-size:0.88rem;">From venue prep to pony safety, here's everything you need to make your child's birthday truly unforgettable with a pony visit.</p>
-              <div class="blog-meta">
+              <h4 style="margin:var(--space-2) 0 var(--space-2);">10 Tips for Planning the Perfect Pony Birthday Party
+              </h4>
+              <p style="font-size:0.88rem;">From venue prep to pony safety, here's everything you need to make your
+                child's birthday truly unforgettable with a pony visit.</p>
+              <div class="blog-meta" style="border-bottom: none; margin-bottom: 0;">
                 <span><i class="fas fa-calendar"></i> May 15, 2025</span>
                 <span><i class="fas fa-clock"></i> 5 min read</span>
-                <a href="#" style="color:var(--primary);font-weight:600;margin-left:auto;">Read <i class="fas fa-arrow-right"></i></a>
+              </div>
+              <div style="margin-top: var(--space-4); text-align: center;">
+                <a href="#" class="blog-read-link">Read Article <i class="fas fa-arrow-right"></i></a>
               </div>
             </div>
           </div>
           <div class="blog-card reveal reveal-delay-2">
             <div class="blog-img-wrap">
-              <img src="https://images.unsplash.com/photo-1490750967868-88df5691cc45?w=500&q=80" alt="Blog post" class="blog-img" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1490750967868-88df5691cc45?w=500&q=80" alt="Blog post"
+                class="blog-img" loading="lazy">
             </div>
             <div class="blog-content">
               <span class="blog-category">Pony Care</span>
               <h4 style="margin:var(--space-2) 0 var(--space-2);">A Day in the Life of Our Party Ponies</h4>
-              <p style="font-size:0.88rem;">Ever wondered what Daisy and Cinnamon get up to on their day off? Take a behind-the-scenes look at our paddock routine and daily care.</p>
-              <div class="blog-meta">
+              <p style="font-size:0.88rem;">Ever wondered what Daisy and Cinnamon get up to on their day off? Take a
+                behind-the-scenes look at our paddock routine and daily care.</p>
+              <div class="blog-meta" style="border-bottom: none; margin-bottom: 0;">
                 <span><i class="fas fa-calendar"></i> Apr 28, 2025</span>
                 <span><i class="fas fa-clock"></i> 4 min read</span>
-                <a href="#" style="color:var(--primary);font-weight:600;margin-left:auto;">Read <i class="fas fa-arrow-right"></i></a>
+              </div>
+              <div style="margin-top: var(--space-4); text-align: center;">
+                <a href="#" class="blog-read-link">Read Article <i class="fas fa-arrow-right"></i></a>
               </div>
             </div>
           </div>
           <div class="blog-card reveal reveal-delay-3">
             <div class="blog-img-wrap">
-              <img src="https://images.unsplash.com/photo-1506806732259-39c2d0268443?w=500&q=80" alt="Blog post" class="blog-img" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1506806732259-39c2d0268443?w=500&q=80" alt="Blog post"
+                class="blog-img" loading="lazy">
             </div>
             <div class="blog-content">
               <span class="blog-category">Stories</span>
               <h4 style="margin:var(--space-2) 0 var(--space-2);">Butterscotch's First Hospital Therapy Visit</h4>
-              <p style="font-size:0.88rem;">The day Butterscotch walked into a children's ward for the first time is a story we'll never forget. Read about the magic and tears.</p>
-              <div class="blog-meta">
+              <p style="font-size:0.88rem;">The day Butterscotch walked into a children's ward for the first time is a
+                story we'll never forget. Read about the magic and tears.</p>
+              <div class="blog-meta" style="border-bottom: none; margin-bottom: 0;">
                 <span><i class="fas fa-calendar"></i> Apr 10, 2025</span>
                 <span><i class="fas fa-clock"></i> 6 min read</span>
-                <a href="#" style="color:var(--primary);font-weight:600;margin-left:auto;">Read <i class="fas fa-arrow-right"></i></a>
+              </div>
+              <div style="margin-top: var(--space-4); text-align: center;">
+                <a href="#" class="blog-read-link">Read Article <i class="fas fa-arrow-right"></i></a>
               </div>
             </div>
           </div>
           <div class="blog-card reveal reveal-delay-1">
             <div class="blog-img-wrap">
-              <img src="https://images.unsplash.com/photo-1534307671554-9a6d81f4d629?w=500&q=80" alt="Blog post" class="blog-img" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1534307671554-9a6d81f4d629?w=500&q=80" alt="Blog post"
+                class="blog-img" loading="lazy">
             </div>
             <div class="blog-content">
               <span class="blog-category">Guides</span>
-              <h4 style="margin:var(--space-2) 0 var(--space-2);">Complete Guide to Paddock Requirements for Pony Visits</h4>
-              <p style="font-size:0.88rem;">Unsure if your yard is suitable? This comprehensive checklist covers everything from space to surface type.</p>
-              <div class="blog-meta">
+              <h4 style="margin:var(--space-2) 0 var(--space-2);">Complete Guide to Paddock Requirements for Pony Visits
+              </h4>
+              <p style="font-size:0.88rem;">Unsure if your yard is suitable? This comprehensive checklist covers
+                everything from space to surface type.</p>
+              <div class="blog-meta" style="border-bottom: none; margin-bottom: 0;">
                 <span><i class="fas fa-calendar"></i> Mar 22, 2025</span>
                 <span><i class="fas fa-clock"></i> 7 min read</span>
-                <a href="#" style="color:var(--primary);font-weight:600;margin-left:auto;">Read <i class="fas fa-arrow-right"></i></a>
+              </div>
+              <div style="margin-top: var(--space-4); text-align: center;">
+                <a href="#" class="blog-read-link">Read Article <i class="fas fa-arrow-right"></i></a>
               </div>
             </div>
           </div>
           <div class="blog-card reveal reveal-delay-2">
             <div class="blog-img-wrap">
-              <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=500&q=80" alt="Blog post" class="blog-img" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=500&q=80" alt="Blog post"
+                class="blog-img" loading="lazy">
             </div>
             <div class="blog-content">
               <span class="blog-category">Therapy</span>
               <h4 style="margin:var(--space-2) 0 var(--space-2);">5 Benefits of Animal-Assisted Therapy for PTSD</h4>
-              <p style="font-size:0.88rem;">Growing evidence supports equine therapy as a powerful intervention for adults and veterans experiencing PTSD symptoms.</p>
-              <div class="blog-meta">
+              <p style="font-size:0.88rem;">Growing evidence supports equine therapy as a powerful intervention for
+                adults and veterans experiencing PTSD symptoms.</p>
+              <div class="blog-meta" style="border-bottom: none; margin-bottom: 0;">
                 <span><i class="fas fa-calendar"></i> Mar 5, 2025</span>
                 <span><i class="fas fa-clock"></i> 5 min read</span>
-                <a href="#" style="color:var(--primary);font-weight:600;margin-left:auto;">Read <i class="fas fa-arrow-right"></i></a>
+              </div>
+              <div style="margin-top: var(--space-4); text-align: center;">
+                <a href="#" class="blog-read-link">Read Article <i class="fas fa-arrow-right"></i></a>
               </div>
             </div>
           </div>
           <div class="blog-card reveal reveal-delay-3">
             <div class="blog-img-wrap">
-              <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=500&q=80" alt="Blog post" class="blog-img" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=500&q=80" alt="Blog post"
+                class="blog-img" loading="lazy">
             </div>
             <div class="blog-content">
               <span class="blog-category">Party Tips</span>
-              <h4 style="margin:var(--space-2) 0 var(--space-2);">Unicorn vs. Princess Themed Pony Party — Which Wins?</h4>
-              <p style="font-size:0.88rem;">We break down the most popular pony party themes, decoration ideas, and how to style your pony to match the magic.</p>
-              <div class="blog-meta">
+              <h4 style="margin:var(--space-2) 0 var(--space-2);">Unicorn vs. Princess Themed Pony Party — Which Wins?
+              </h4>
+              <p style="font-size:0.88rem;">We break down the most popular pony party themes, decoration ideas, and how
+                to style your pony to match the magic.</p>
+              <div class="blog-meta" style="border-bottom: none; margin-bottom: 0;">
                 <span><i class="fas fa-calendar"></i> Feb 18, 2025</span>
                 <span><i class="fas fa-clock"></i> 4 min read</span>
-                <a href="#" style="color:var(--primary);font-weight:600;margin-left:auto;">Read <i class="fas fa-arrow-right"></i></a>
+              </div>
+              <div style="margin-top: var(--space-4); text-align: center;">
+                <a href="#" class="blog-read-link">Read Article <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="blog-card reveal reveal-delay-1">
+            <div class="blog-img-wrap">
+              <img src="https://images.unsplash.com/photo-1534307671554-9a6d81f4d629?w=500&q=80" alt="Blog post"
+                class="blog-img" loading="lazy">
+            </div>
+            <div class="blog-content">
+              <span class="blog-category">Guides</span>
+              <h4 style="margin:var(--space-2) 0 var(--space-2);">How to Prepare Your Stable for Winter Therapy Visits
+              </h4>
+              <p style="font-size:0.88rem;">Essential safety tips and equipment needed to ensure comfort for both ponies
+                and patients during cold weather sessions.</p>
+              <div class="blog-meta" style="border-bottom: none; margin-bottom: 0;">
+                <span><i class="fas fa-calendar"></i> Jan 25, 2025</span>
+                <span><i class="fas fa-clock"></i> 6 min read</span>
+              </div>
+              <div style="margin-top: var(--space-4); text-align: center;">
+                <a href="#" class="blog-read-link">Read Article <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="blog-card reveal reveal-delay-2">
+            <div class="blog-img-wrap">
+              <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=500&q=80" alt="Blog post"
+                class="blog-img" loading="lazy">
+            </div>
+            <div class="blog-content">
+              <span class="blog-category">Stories</span>
+              <h4 style="margin:var(--space-2) 0 var(--space-2);">The Silent Bond: A Non-Verbal Child's First Pony
+                Connection</h4>
+              <p style="font-size:0.88rem;">A heartwarming account of how a single therapy session helped a young boy
+                communicate in ways he never had before.</p>
+              <div class="blog-meta" style="border-bottom: none; margin-bottom: 0;">
+                <span><i class="fas fa-calendar"></i> Jan 12, 2025</span>
+                <span><i class="fas fa-clock"></i> 8 min read</span>
+              </div>
+              <div style="margin-top: var(--space-4); text-align: center;">
+                <a href="#" class="blog-read-link">Read Article <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="blog-card reveal reveal-delay-3">
+            <div class="blog-img-wrap">
+              <img src="https://images.unsplash.com/photo-1506806732259-39c2d0268443?w=500&q=80" alt="Blog post"
+                class="blog-img" loading="lazy">
+            </div>
+            <div class="blog-content">
+              <span class="blog-category">Pony Care</span>
+              <h4 style="margin:var(--space-2) 0 var(--space-2);">Nutrition Secrets: What Keeps Our Ponies So Energetic?
+              </h4>
+              <p style="font-size:0.88rem;">Deep dive into the specialized diet and organic supplements that keep our
+                therapy herd healthy and happy year-round.</p>
+              <div class="blog-meta" style="border-bottom: none; margin-bottom: 0;">
+                <span><i class="fas fa-calendar"></i> Jan 5, 2025</span>
+                <span><i class="fas fa-clock"></i> 5 min read</span>
+              </div>
+              <div style="margin-top: var(--space-4); text-align: center;">
+                <a href="#" class="blog-read-link">Read Article <i class="fas fa-arrow-right"></i></a>
               </div>
             </div>
           </div>
@@ -279,7 +461,8 @@
         <div class="newsletter-box reveal">
           <span style="font-size:2.5rem;">📬</span>
           <h2 style="margin:var(--space-4) 0 var(--space-2);">Stay in the Loop</h2>
-          <p>Get pony party tips, exclusive offers, and heartwarming therapy stories delivered to your inbox monthly. No spam, ever.</p>
+          <p>Get pony party tips, exclusive offers, and heartwarming therapy stories delivered to your inbox monthly. No
+            spam, ever.</p>
           <form class="newsletter-form" data-form="newsletter" novalidate>
             <input type="email" id="nl-email" placeholder="Enter your email address" data-validate="required|email">
             <span class="form-error" data-error="nl-email"></span>
@@ -287,43 +470,80 @@
               <i class="fas fa-paper-plane"></i> Subscribe
             </button>
           </form>
-          <p style="font-size:0.8rem;color:var(--text-muted);margin-top:var(--space-3);">Join 2,400+ pony lovers. Unsubscribe anytime.</p>
+          <p style="font-size:0.8rem;color:var(--text-muted);margin-top:var(--space-3);">Join 2,400+ pony lovers.
+            Unsubscribe anytime.</p>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="../index.html" class="brand" style="margin-bottom:var(--space-4);display:inline-flex;"><div class="brand-logo">🐴</div><span class="brand-name">Pony Party</span></a>
-          <p class="footer-desc">Bringing magical pony experiences to your events since 2018.</p>
+          <a href="index.html" class="brand" style="margin-bottom:var(--space-4);display:inline-flex;">
+            <div class="brand-logo">🐴</div>
+            <span class="brand-name">Pony Party</span>
+          </a>
+          <p class="footer-desc">Bringing magical pony experiences to your events since 2018. Certified, insured, and
+            always adorable.</p>
           <div class="footer-socials">
-            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
-        <div class="footer-col"><h5>Services</h5><ul class="footer-links">
-          <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Party Visits</a></li>
-          <li><a href="services.html#therapy" class="footer-link"><i class="fas fa-chevron-right"></i> Therapy Visits</a></li>
-          <li><a href="services.html#grooming" class="footer-link"><i class="fas fa-chevron-right"></i> Grooming Add-ons</a></li>
-        </ul></div>
-        <div class="footer-col"><h5>Company</h5><ul class="footer-links">
-          <li><a href="about.html" class="footer-link"><i class="fas fa-chevron-right"></i> About Us</a></li>
-          <li><a href="blog.html" class="footer-link"><i class="fas fa-chevron-right"></i> Blog</a></li>
-          <li><a href="contact.html" class="footer-link"><i class="fas fa-chevron-right"></i> Contact</a></li>
-        </ul></div>
-        <div class="footer-col"><h5>Legal</h5><ul class="footer-links">
-          <li><a href="#" class="footer-link"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
-          <li><a href="#" class="footer-link"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
-        </ul></div>
+
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul class="footer-links">
+            <li><a href="pages/services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Party Visits</a>
+            </li>
+            <li><a href="pages/services.html#therapy" class="footer-link"><i class="fas fa-chevron-right"></i> Therapy
+                Visits</a></li>
+            <li><a href="pages/services.html#grooming" class="footer-link"><i class="fas fa-chevron-right"></i> Grooming
+                Add-ons</a></li>
+            <li><a href="pages/services.html#corporate" class="footer-link"><i class="fas fa-chevron-right"></i>
+                Corporate Events</a></li>
+            <li><a href="pages/services.html#weddings" class="footer-link"><i class="fas fa-chevron-right"></i>
+                Weddings</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul class="footer-links">
+            <li><a href="pages/about.html" class="footer-link"><i class="fas fa-chevron-right"></i> About Us</a></li>
+            <li><a href="pages/about.html#ponies" class="footer-link"><i class="fas fa-chevron-right"></i> Our
+                Ponies</a></li>
+            <li><a href="pages/blog.html" class="footer-link"><i class="fas fa-chevron-right"></i> Blog</a></li>
+            <li><a href="pages/contact.html" class="footer-link"><i class="fas fa-chevron-right"></i> Contact</a></li>
+            <li><a href="pages/coming-soon.html" class="footer-link"><i class="fas fa-chevron-right"></i> Coming
+                Soon</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Support</h5>
+          <ul class="footer-links">
+            <li><a href="pages/contact.html#faq" class="footer-link"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+            <li><a href="pages/contact.html#booking" class="footer-link"><i class="fas fa-chevron-right"></i> Book
+                Online</a></li>
+            <li><a href="#" class="footer-link"><i class="fas fa-chevron-right"></i> Paddock Guide</a></li>
+            <li><a href="#" class="footer-link"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+            <li><a href="#" class="footer-link"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+          </ul>
+        </div>
       </div>
+
       <div class="footer-bottom">
-        <p class="footer-copy">© 2025 Pony Party. All rights reserved.</p>
-        <div class="footer-bottom-links"><a href="#">Privacy</a><a href="#">Terms</a></div>
+        <p class="footer-copy">© 2026 Pony Party. All rights reserved. Made with 🐴 and love.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+        </div>
       </div>
     </div>
   </footer>
@@ -339,4 +559,5 @@
     });
   </script>
 </body>
+
 </html>
