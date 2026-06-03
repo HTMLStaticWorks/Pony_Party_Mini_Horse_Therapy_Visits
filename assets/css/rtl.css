@@ -42,10 +42,6 @@
   right: var(--space-3);
 }
 
-[dir="rtl"] .pricing-badge {
-  right: auto;
-  left: var(--space-4);
-}
 
 [dir="rtl"] .input-icon-btn {
   right: auto;
@@ -74,4 +70,21 @@
 [dir="rtl"] .hero-float-2 {
   right: auto;
   left: -20px;
+}
+
+[dir="rtl"] .footer-grid {
+  text-align: right;
+}
+
+[dir="rtl"] .footer-col h5 {
+  text-align: right;
+}
+
+[dir="rtl"] .footer-brand {
+  text-align: right;
+}
+
+[dir="rtl"] .footer-bottom {
+  padding-right: 0;
+  padding-left: 60px;
 }

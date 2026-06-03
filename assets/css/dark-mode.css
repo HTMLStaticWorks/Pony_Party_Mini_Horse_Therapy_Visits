@@ -76,6 +76,11 @@
   color: var(--text-primary);
 }
 
+[data-theme="dark"] input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
 [data-theme="dark"] .form-control::placeholder {
   color: var(--text-muted);
 }

@@ -515,7 +515,7 @@ p {
 /* RTL Toggle */
 .rtl-toggle {
   display: none;
-  height: 36px;
+  height: 40px;
   padding: 0 var(--space-3);
   border-radius: var(--radius-md);
   background: var(--bg-secondary);
@@ -568,7 +568,11 @@ p {
 .btn-login {
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   color: #fff;
-  padding: var(--space-2) var(--space-5);
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--space-5);
   border-radius: var(--radius-full);
   font-size: 0.9rem;
   font-weight: 600;
@@ -1525,6 +1529,7 @@ select.form-control {
 .footer-bottom {
   border-top: 1px solid var(--border-color);
   padding-top: var(--space-6);
+  padding-right: 60px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -2110,6 +2115,11 @@ select.form-control {
   justify-content: flex-end;
   gap: var(--space-3);
   padding: var(--space-4) var(--space-6);
+}
+
+.auth-topbar .rtl-toggle,
+.auth-topbar .theme-toggle {
+  display: flex;
 }
 
 .auth-main {

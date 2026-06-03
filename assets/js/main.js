@@ -28,7 +28,7 @@ const ThemeManager = {
   apply(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     document.querySelectorAll('.theme-toggle').forEach(btn => {
-      btn.textContent = theme === 'dark' ? '☀️' : '🌙';
+      btn.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
       btn.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
     });
   },
@@ -320,7 +320,19 @@ const PasswordToggle = {
         if (!input) return;
         const isPassword = input.type === 'password';
         input.type = isPassword ? 'text' : 'password';
-        btn.textContent = isPassword ? '🙈' : '👁️';
+        
+        const icon = btn.querySelector('i');
+        if (icon) {
+          if (isPassword) {
+            icon.classList.remove('fa-eye');
+            icon.classList.add('fa-eye-slash');
+          } else {
+            icon.classList.remove('fa-eye-slash');
+            icon.classList.add('fa-eye');
+          }
+        } else {
+          btn.textContent = isPassword ? '🙈' : '👁️';
+        }
       });
     });
   }
