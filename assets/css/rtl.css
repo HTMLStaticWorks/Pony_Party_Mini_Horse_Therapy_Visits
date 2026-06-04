@@ -11,9 +11,7 @@
 /* Header & Nav native RTL handles most flips, 
    but we ensure specific alignment and icon flips */
 
-[dir="rtl"] .auth-topbar {
-  justify-content: flex-start; /* Moves icons to the right side in RTL context */
-}
+
 
 [dir="rtl"] .section-header {
   text-align: center;
@@ -51,6 +49,12 @@
 [dir="rtl"] .input-icon-wrap .form-control {
   padding-right: var(--space-4);
   padding-left: var(--space-10);
+}
+
+[dir="rtl"] select.form-control {
+  background-position: left 1rem center;
+  padding-right: var(--space-4);
+  padding-left: 2.5rem;
 }
 
 /* Fix for icons and text that need specific RTL padding/margin */

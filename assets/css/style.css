@@ -698,7 +698,8 @@ p {
   justify-content: center;
   align-items: center;
   margin-bottom: 0;
-  transform: none !important; /* Prevent rotation sticking on touch */
+  transform: none !important;
+  /* Prevent rotation sticking on touch */
 }
 
 
@@ -1381,6 +1382,17 @@ textarea.form-control {
 select.form-control {
   appearance: none;
   cursor: pointer;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235C4033' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.2em;
+  padding-right: 2.5rem;
+}
+
+/* Always show WebKit spin buttons on number inputs */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1 !important;
 }
 
 /* Social Login */
@@ -1795,6 +1807,7 @@ select.form-control {
     gap: var(--space-16);
     align-items: center;
   }
+
   .therapy-info-image {
     height: 400px;
   }
@@ -2245,6 +2258,7 @@ select.form-control {
 }
 
 @media(max-width:380px) {
+
   .form-check,
   .form-row-between a {
     font-size: 0.8rem !important;
@@ -2382,6 +2396,7 @@ select.form-control {
 }
 
 @media (min-width: 768px) {
+
   /* Centering 3rd card in 2-column grid at 768px */
   .testimonials-grid,
   .packages-grid {
@@ -2730,4 +2745,12 @@ select.form-control {
   font-weight: 700;
   color: var(--primary);
   margin: var(--space-3) 0 var(--space-1);
+}
+
+/* Mobile layout for inner page hero sections at 360px width and below */
+@media (max-width: 360px) {
+  .page-hero {
+    padding: 6rem 0 5rem !important;
+    min-height: 35vh !important;
+  }
 }
