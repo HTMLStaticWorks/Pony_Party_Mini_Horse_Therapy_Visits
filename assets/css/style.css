@@ -1337,7 +1337,7 @@ p {
 .form-control {
   width: 100%;
   padding: var(--space-3) var(--space-4);
-  background: var(--bg-secondary);
+  background-color: var(--bg-secondary);
   border: 1.5px solid var(--border-color);
   border-radius: var(--radius-md);
   font-size: 0.95rem;
@@ -1347,7 +1347,7 @@ p {
 
 .form-control:focus {
   border-color: var(--primary);
-  background: var(--bg-card);
+  background-color: var(--bg-card);
   box-shadow: 0 0 0 3px var(--primary-glow);
 }
 
